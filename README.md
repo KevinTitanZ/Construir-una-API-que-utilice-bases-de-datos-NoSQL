@@ -57,9 +57,9 @@ Mongoose es una biblioteca de modelado de objetos MongoDB para Node.js. Funciona
 #### 1. Configuración del entorno
 Se inició creando la carpeta del proyecto y utilizando el comando npm init -y para generar el archivo package.json. Posteriormente, se instalaron las dependencias necesarias: express para el servidor web y mongoose como ORM para interactuar con MongoDB.
 
-![grafico5](https://i.imgur.com/4937dF5.png)
+![grafico1](https://imgur.com/4937dF5.png)
 
-![grafico5](https://i.imgur.com/4pdsaP4.png)
+![grafico2](https://i.imgur.com/4pdsaP4.png)
 
 ![grafico5](https://i.imgur.com/hQyzf0E.png)
 
