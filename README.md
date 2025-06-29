@@ -56,14 +56,9 @@ Mongoose es una biblioteca de modelado de objetos MongoDB para Node.js. Funciona
 
 #### 1. Configuración del entorno
 Se inició creando la carpeta del proyecto y utilizando el comando npm init -y para generar el archivo package.json. Posteriormente, se instalaron las dependencias necesarias: express para el servidor web y mongoose como ORM para interactuar con MongoDB.
-
 ![Descripción](https://i.imgur.com/4937dF5.png)
-
-
 ![grafico2](https://i.imgur.com/4pdsaP4.png)
-
 ![grafico3](https://i.imgur.com/hQyzf0E.png)
-
 
 #### 2. Definición de la estructura del proyecto
 Se organizó el proyecto en carpetas separadas: models para los esquemas de datos, controllers para la lógica de negocio, routes para los endpoints de la API, y un archivo principal index.js que contiene la configuración y puesta en marcha del servidor.
@@ -71,7 +66,7 @@ Se organizó el proyecto en carpetas separadas: models para los esquemas de dato
 ![grafico4](https://i.imgur.com/lWe9Pg1.png)
 
 
-#### 3. Conexión con MongoDB
+#### 3. Conexión con MongoDBx
 Se configuró la conexión a la base de datos MongoDB mediante Mongoose en un archivo db.js. Se utilizó la dirección mongodb://127.0.0.1:27017/miBaseDeDatos, correspondiente a una base local, asegurando que el servicio estuviera activo. La conexión fue probada y verificada mediante mensajes de consola.
 ![grafico5](https://i.imgur.com/5v6z5gI.png)
 
