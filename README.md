@@ -1,8 +1,8 @@
-#  Construir una API que utilice bases de datos NoSQL con Mongoose.
+# Desarrollo e Implementación de Funcionalidades Mejoradas en una API RESTful con Angular y Node.js
 
 **Estudiante:** _Ordoñez Cabrera Kevin Lenin_  
 
-**Fecha de entrega:** _29/06/2025_
+**Fecha de entrega:** _30/06/2025_
 
 **Asignatura:** _Aplicaciones Distribuidas_
 
@@ -11,86 +11,118 @@
 ---
 
 ##  Resumen
-Se implementó una API RESTful utilizando el framework Express.js de Node.js, en conjunto con la base de datos NoSQL MongoDB y el ORM Mongoose. El desarrollo contempló una arquitectura modular compuesta por modelos, rutas, controladores y servidor principal, lo que permitió realizar operaciones CRUD sobre una colección denominada usuarios.
 
-Esta práctica permitió aplicar los principios fundamentales del desarrollo backend moderno, integrando herramientas eficientes para la creación de servicios web con acceso estructurado a bases de datos.
+Se desarrolló una aplicación web completa que integra una API RESTful construida en Node.js con Express y MongoDB, y un frontend realizado en Angular con componentes standalone. Se implementaron funcionalidades completas de autenticación mediante JWT, almacenamiento seguro de contraseñas con bcrypt, y un CRUD completo de usuarios accesible desde el frontend. 
 
-**Palabras Claves:** Mongoose, APi RESTful y NoSQL.
+Además, se integró manejo de sesiones, redirección de vistas, validación de formularios, mensajes de error/satisfacción, y mejoras visuales mediante estilos responsivos. El sistema se construyó bajo principios de modularidad, seguridad y escalabilidad, cumpliendo con estándares actuales de desarrollo web.
+
+**Palabras Claves:** Angular, Node.js y MongoDB.
 
 
 ##  Introducción
 
-En el desarrollo de aplicaciones modernas, las APIs RESTful representan un componente fundamental para la comunicación entre sistemas. Estas permiten exponer servicios de manera eficiente, segura y estructurada, facilitando la integración entre frontend y backend. En este laboratorio se abordó la construcción de una API RESTful utilizando tecnologías del entorno Node.js, específicamente el framework Express y la base de datos NoSQL MongoDB.
+El desarrollo de aplicaciones modernas requiere de una integración efectiva entre el frontend y el backend, así como de medidas de seguridad robustas y experiencias de usuario amigables. Este proyecto tiene como objetivo construir un sistema completo de gestión de usuarios, desde la creación hasta la autenticación, empleando tecnologías actuales como Angular, Node.js, MongoDB y Mongoose.
 
-El propósito principal fue implementar una solución backend que permita realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una colección de usuarios, empleando el ORM Mongoose para interactuar con la base de datos. Además, se aplicaron buenas prácticas de organización del código, separación por capas (modelo, rutas, controladores) y validación del funcionamiento a través de herramientas como Postman y MongoDB Compass.
+Además de implementar las operaciones básicas del CRUD, se enfocó en mejorar la seguridad con la inclusión de JWT y bcrypt, así como en optimizar la experiencia del usuario a través de formularios modernos, redirección automática, validaciones y visualizaciones dinámicas. Estas mejoras permiten construir una aplicación sólida, segura y mantenible.
 
 ##  Objetivos
-- Configurar un entorno de desarrollo con Node.js y Express.js.
+- Implementar autenticación de usuarios con tokens JWT.
 
-- Integrar MongoDB como sistema de almacenamiento NoSQL.
+- Asegurar el almacenamiento de contraseñas utilizando hashing con bcrypt.
 
-- Utilizar Mongoose para definir esquemas y gestionar la conexión con la base de datos.
-
-- Implementar y probar operaciones de creación, lectura, actualización y eliminación.
-
-- Validar el funcionamiento de los endpoints utilizando Postman.
+- Desarrollar formularios de registro y login conectados al backend.
 
 
 ##  Marco Teórico
 
 ###  - API RESTful
-Una API RESTful (Application Programming Interface) es un conjunto de reglas y convenciones que permiten la comunicación entre diferentes aplicaciones utilizando el protocolo HTTP. REST (Representational State Transfer) es un estilo de arquitectura que promueve el uso de operaciones estándar como GET, POST, PUT y DELETE para manipular recursos. Las APIs RESTful son ampliamente utilizadas en el desarrollo web moderno por su simplicidad, escalabilidad y compatibilidad con múltiples plataformas.
+Una API RESTful permite la comunicación entre sistemas mediante el protocolo HTTP. Las operaciones básicas (GET, POST, PUT, DELETE) permiten acceder y modificar recursos, y son ideales para construir aplicaciones web interactivas y escalables.
 
-###  - Node.js y Express.js
-Node.js es un entorno de ejecución para JavaScript del lado del servidor, que permite construir aplicaciones escalables y eficientes. Su arquitectura basada en eventos y su modelo de entrada/salida no bloqueante lo hacen ideal para aplicaciones en tiempo real y servicios web.
+###  - JWT (JSON Web Token)
+JWT es un método estándar de autenticación basado en tokens. Permite que los usuarios inicien sesión y accedan a recursos protegidos sin necesidad de enviar credenciales en cada solicitud, mejorando tanto la seguridad como el rendimiento.
 
-Express.js es un framework web minimalista para Node.js que facilita la creación de servidores HTTP y APIs. Proporciona herramientas y funciones para gestionar rutas, middlewares, solicitudes y respuestas, permitiendo un desarrollo rápido y estructurado.
+###  - Bcrypt
+Bcrypt es un algoritmo de hash que se utiliza para almacenar contraseñas de manera segura. Su uso impide que las contraseñas sean leídas directamente en la base de datos, incluso si esta es comprometida.
 
-###  - MongoDB
-MongoDB es un sistema de gestión de bases de datos NoSQL orientado a documentos. En lugar de usar tablas y registros como en las bases relacionales, MongoDB almacena los datos en estructuras tipo JSON llamadas documentos, dentro de colecciones. Esta flexibilidad permite un diseño más ágil y escalable, ideal para aplicaciones con esquemas dinámicos.
+###  - Angular y Componentes Standalone
+Angular es un framework para el desarrollo de interfaces web. Los componentes standalone permiten crear vistas reutilizables y autónomas, facilitando la organización del código y la carga dinámica de vistas.
 
-###  - Mongoose
-Mongoose es una biblioteca de modelado de objetos MongoDB para Node.js. Funciona como un ORM (Object Relational Mapping), aunque orientado a documentos, permitiendo definir esquemas para las colecciones y facilitando la validación, conversión y consulta de datos. Mongoose abstrae muchas operaciones complejas de MongoDB y ofrece una interfaz clara y consistente para interactuar con la base de datos.
+###  - CRUD
+El acrónimo CRUD representa las operaciones básicas de manipulación de datos: Crear, Leer, Actualizar y Eliminar. Estas operaciones son fundamentales en sistemas que requieren interacción con usuarios o registros.
 
 ## Descripción del Procedimiento
 
-#### 1. Configuración del entorno
+#### 1. Autenticación y Seguridad
+Se implementó autenticación con JWT desde el backend para generar tokens seguros al momento del login.
 
-![grafico19](https://i.imgur.com/2HRfjIY.png)
+Las contraseñas son almacenadas de forma encriptada utilizando el algoritmo bcrypt.
+
+Se desarrolló un middleware que valida los tokens JWT en rutas protegidas, permitiendo restringir el acceso a funcionalidades sensibles.
+
+![grafico19](https://i.imgur.com/mmdwL0k.png)
 
 
-![grafico19](https://i.imgur.com/NULXXaj.png)
+#### 2. CRUD Completo desde el Frontend
+Se construyó un formulario de registro de usuarios que permite enviar los datos al backend, donde se validan y almacenan.
 
-![grafico19](https://i.imgur.com/4VuwGfn.png)
+Se desarrolló un formulario de login, que al autenticarse correctamente guarda el token en el localStorage y redirige al panel principal.
 
-![grafico19](https://i.imgur.com/wdqObsz.png)
+Se agregó una tabla que lista todos los usuarios, con opciones para editar o eliminar desde la misma vista.
 
-![grafico19](https://i.imgur.com/4zNKi1w.png)
+Se integraron todas las operaciones CRUD en un solo módulo de gestión, optimizando la navegación y la usabilidad.
+
+![grafico19](https://i.imgur.com/uyHpzU2.png)
+
+#### 3. Manejo de Sesión y Redirección
+Tras el inicio de sesión exitoso, el usuario es automáticamente redirigido al panel CRUD.
+
+Se incluyó la opción de navegar entre login y registro sin perder el estado de la aplicación.
+
+
+
+_Login_
+![grafico19](https://i.imgur.com/LBVFpn2.png)
+
+_Registro_
+
+![grafico19](https://i.imgur.com/MCPhf4m.png)
+![grafico19](https://i.imgur.com/ScJVMc4.png)
+
+
+
+#### 4.  Manejo de Errores y Mensajes
+Se integró el despliegue de mensajes claros de éxito o error al realizar cualquier operación.
+![grafico19](https://i.imgur.com/f30HVpS.png)
+
+Se añadieron validaciones obligatorias en campos como nombre, email y contraseña en ambas capas (frontend y backend).
+![grafico19](https://i.imgur.com/jLFFiw5.png)
+
 
 ## Análisis de Resultados
-La implementación de la API RESTful permitió observar resultados concretos y funcionales en el manejo de operaciones sobre la base de datos MongoDB. A través de las pruebas realizadas en Postman y la verificación en MongoDB Compass, se confirmó que cada uno de los endpoints ejecutó correctamente las acciones previstas en el diseño del sistema.
+La implementación del sistema de autenticación y del CRUD completo desde el frontend permitió evaluar el comportamiento de la aplicación tanto en términos de funcionalidad como de experiencia de usuario. Tras finalizar las configuraciones del backend con Express, Mongoose, JWT y bcrypt, y del frontend en Angular con componentes standalone, se observó un flujo de interacción robusto y coherente entre ambas capas.
 
-Durante el proceso, se logró establecer una conexión estable con la base de datos local mediante Mongoose, lo que permitió abstraer operaciones complejas y centrarse en la lógica de negocio. Las pruebas con POST, GET, PUT y DELETE reflejaron respuestas HTTP apropiadas (códigos 200, 201, 400 y 404 según el caso), confirmando que el servidor manejaba correctamente tanto las solicitudes válidas como los errores esperados.
+La integración del formulario de registro y login permitió validar el correcto funcionamiento del cifrado de contraseñas y la generación de tokens de autenticación. Una vez autenticado, el usuario es redirigido automáticamente al panel principal, desde donde se accede a todas las funcionalidades del CRUD. Esta interacción demostró una comunicación eficaz entre frontend y backend mediante solicitudes HTTP protegidas por JWT.
 
-En general, los resultados obtenidos fueron satisfactorios y demostraron la correcta integración entre los distintos componentes de la API, validando la funcionalidad del sistema tanto a nivel de servidor como en la persistencia de datos.
+Las pruebas con usuarios reales confirmaron que los datos se almacenan de manera segura en la base de datos MongoDB. Se verificó también que los tokens almacenados en localStorage se enviaban correctamente en las solicitudes protegidas, permitiendo acceder únicamente a los usuarios autenticados.
+
+El uso de formularios con validaciones integradas y el despliegue de mensajes personalizados mejoró significativamente la usabilidad del sistema. Los errores comunes, como campos vacíos o autenticaciones inválidas, fueron gestionados correctamente con retroalimentación visual inmediata.
 
 
 ## Discusión
-El uso de Mongoose resultó ser una herramienta clave, ya que ofreció una forma sencilla y ordenada de definir modelos, manejar esquemas y realizar operaciones sobre los datos sin necesidad de escribir consultas nativas en MongoDB. Esto permitió centrarse en la lógica de negocio y en la correcta respuesta a las solicitudes HTTP.
+Durante el desarrollo del sistema web con Angular y Node.js, se abordaron múltiples aspectos clave del desarrollo backend y frontend moderno. Uno de los retos más importantes fue la implementación de autenticación segura mediante JWT y el cifrado de contraseñas con bcrypt, lo cual permitió garantizar la integridad y confidencialidad de los datos de los usuarios. Esta mejora fue especialmente relevante al considerar buenas prácticas de seguridad web.
 
-Otro aspecto importante observado fue el comportamiento de MongoDB al no crear colecciones vacías, lo cual pudo generar confusión al buscar la colección usuarios sin haber insertado ningún documento. Este detalle reafirma la necesidad de conocer a profundidad las herramientas utilizadas y sus comportamientos predeterminados.
+La integración de Angular con componentes standalone favoreció una estructura de frontend modular y organizada, simplificando tanto la navegación como la reutilización de componentes. Asimismo, la implementación de formularios de registro, inicio de sesión, y gestión de usuarios en una única vista permitió mejorar la experiencia de usuario y reducir los tiempos de interacción.
 
 ## Conclusiones
-**1.** Se logró implementar correctamente una API RESTful utilizando Express.js como framework web y MongoDB como sistema de base de datos NoSQL, cumpliendo con los requerimientos funcionales establecidos.
+**1.** Se logró implementar un sistema completo de gestión de usuarios que incluye autenticación, seguridad y CRUD funcional desde el frontend, cumpliendo con los objetivos establecidos.
 
-**2.** El uso de Mongoose como ORM facilitó la definición de esquemas, la gestión de documentos y la abstracción de operaciones complejas sobre la base de datos, promoviendo un desarrollo más estructurado y legible.
+**2.** La integración de JWT y bcrypt fortaleció significativamente la seguridad del sistema, protegiendo la información sensible de los usuarios y controlando el acceso a las funcionalidades protegidas.
 
-**3.** La estructura modular del proyecto, separando modelos, controladores y rutas, permitió una mejor organización del código y facilitó su mantenimiento.
+**3.** Las pruebas realizadas demostraron la correcta comunicación entre frontend y backend, con una gestión adecuada de sesiones, validación de campos y retroalimentación clara para el usuario.
 
 ## Recomendaciones
 
 **1.** Aplicar control de errores más detallado en cada endpoint para mejorar la retroalimentación al cliente en caso de fallos o datos inválidos.
 
-**2.** Utilizar MongoDB Compass como herramienta de apoyo visual, ya que permite verificar fácilmente si los documentos están siendo almacenados, actualizados o eliminados.
+**2.** Se recomienda integrar un sistema de roles de usuario (por ejemplo, administrador, usuario normal) para diferenciar permisos de accesos.
 
-**3.** Verificar correctamente la conexión a la base de datos antes de iniciar el servidor, especialmente asegurándose de que el servicio de MongoDB esté activo y que la URI de conexión sea correcta (127.0.0.1 en lugar de localhost)
