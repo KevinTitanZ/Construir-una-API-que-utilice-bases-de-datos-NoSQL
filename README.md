@@ -55,93 +55,17 @@ Mongoose es una biblioteca de modelado de objetos MongoDB para Node.js. Funciona
 ## Descripción del Procedimiento
 
 #### 1. Configuración del entorno
-Se inició creando la carpeta del proyecto y utilizando el comando npm init -y para generar el archivo package.json. Posteriormente, se instalaron las dependencias necesarias: express para el servidor web y mongoose como ORM para interactuar con MongoDB.
+
+![grafico19](https://i.imgur.com/2HRfjIY.png)
 
 
-![Descripción](https://i.imgur.com/4937dF5.png)
+![grafico19](https://i.imgur.com/NULXXaj.png)
 
+![grafico19](https://i.imgur.com/4VuwGfn.png)
 
-![grafico2](https://i.imgur.com/4pdsaP4.png)
+![grafico19](https://i.imgur.com/wdqObsz.png)
 
-
-![grafico3](https://i.imgur.com/hQyzf0E.png)
-
-
-#### 2. Definición de la estructura del proyecto
-Se organizó el proyecto en carpetas separadas: models para los esquemas de datos, controllers para la lógica de negocio, routes para los endpoints de la API, y un archivo principal index.js que contiene la configuración y puesta en marcha del servidor.
-
-![grafico4](https://i.imgur.com/lWe9Pg1.png)
-
-
-#### 3. Conexión con MongoDB
-Se configuró la conexión a la base de datos MongoDB mediante Mongoose en un archivo db.js. Se utilizó la dirección mongodb://127.0.0.1:27017/miBaseDeDatos, correspondiente a una base local, asegurando que el servicio estuviera activo. La conexión fue probada y verificada mediante mensajes de consola.
-
-![grafico5](https://i.imgur.com/5v6z5gI.png)
-
-![grafico6](https://i.imgur.com/XKbCacF.png)
-
-#### 4. Creación del modelo de datos
-Se definió un esquema de usuario en User.js, con los campos name, email y createdAt. Mongoose gestionó automáticamente la creación de la colección usuarios en la base de datos.
-
-![grafico7](https://i.imgur.com/w1m3tnq.png)
-
-#### 5. Implementación de los controladores
-Se desarrollaron funciones en userController.js para gestionar las operaciones CRUD: obtener todos los usuarios, crear uno nuevo, buscar por ID, actualizar y eliminar. Estas funciones interactuaban directamente con el modelo definido.
-
-![grafico8](https://i.imgur.com/2dpxjTB.png)
-
-![grafico9](https://i.imgur.com/DJtDTnO.png)
-
-
-#### 6. Definición de las rutas
-En userRoutes.js se declararon las rutas que respondían a las solicitudes HTTP (GET, POST, PUT, DELETE) y se asociaron a las funciones correspondientes del controlador.
-
-![grafico10](https://i.imgur.com/eEwzvbd.png)
-
-
-#### 7. Configuración del servidor
-El servidor Express fue configurado en index.js, integrando los middlewares necesarios, las rutas definidas y estableciendo el puerto 3000 como punto de entrada.
-
-![grafico11](https://i.imgur.com/Mp9JsHL.png)
-
-
-#### 8. Pruebas con Postman
-Se utilizó la herramienta Postman para realizar pruebas a los endpoints de la API. Se enviaron solicitudes con datos JSON y se observaron las respuestas del servidor, verificando que las operaciones CRUD funcionaran correctamente.
-
-_Método Post para agregar un usuario_
-![grafico12](https://i.imgur.com/9YR7MWh.png)
-
-
-_Método Get para ver todos los usuarios_
-![grafico13](https://i.imgur.com/shEtJBK.png)
-
-
-_Método Get para obtener un usuario por su ID_
-![grafico14](https://i.imgur.com/8mkKJ7N.png)
-
-
-_Método Put para actualizar un usuario por su ID_
-![grafico15](https://i.imgur.com/rCQclsn.png)
-
-
-_Método Delete para eliminar un usuario por su ID_
-![grafico16](https://i.imgur.com/9PjbDQL.png)
-
-
-#### 9. Verificación en MongoDB Compass
-Finalmente, se accedió a MongoDB Compass para visualizar la base de datos miBaseDeDatos y comprobar que la colección usuarios contenía los documentos creados, modificados o eliminados durante las pruebas.
-
-_Verificación de la inserción de datos del usuario_
-![grafico17](https://i.imgur.com/qGFALM5.png)
-
-_Verificación de la actualización del usuario; el nombre fue actualizado correctamente._
-![grafico18](https://i.imgur.com/oX85lBR.png)
-
-
-_Verificación de la eliminación del único usuario._
-![grafico19](https://i.imgur.com/G77nunf.png)
-
-
+![grafico19](https://i.imgur.com/4zNKi1w.png)
 
 ## Análisis de Resultados
 La implementación de la API RESTful permitió observar resultados concretos y funcionales en el manejo de operaciones sobre la base de datos MongoDB. A través de las pruebas realizadas en Postman y la verificación en MongoDB Compass, se confirmó que cada uno de los endpoints ejecutó correctamente las acciones previstas en el diseño del sistema.
