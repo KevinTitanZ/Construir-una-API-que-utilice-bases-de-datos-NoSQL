@@ -85,6 +85,7 @@ Se incluyó la opción de navegar entre login y registro sin perder el estado de
 
 
 _Login_
+
 ![grafico19](https://i.imgur.com/LBVFpn2.png)
 
 _Registro_
@@ -99,6 +100,7 @@ Se integró el despliegue de mensajes claros de éxito o error al realizar cualq
 ![grafico19](https://i.imgur.com/f30HVpS.png)
 
 Se añadieron validaciones obligatorias en campos como nombre, email y contraseña en ambas capas (frontend y backend).
+
 ![grafico19](https://i.imgur.com/jLFFiw5.png)
 
 
