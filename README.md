@@ -56,10 +56,15 @@ El acrónimo CRUD representa las operaciones básicas de manipulación de datos:
 Se implementó autenticación con JWT desde el backend para generar tokens seguros al momento del login.
 
 Las contraseñas son almacenadas de forma encriptada utilizando el algoritmo bcrypt.
+
+_Algoritmo bcrypt_
+
 ![grafico19](https://i.imgur.com/PfxE9yL.png)
 ![grafico19](https://i.imgur.com/H9h4Gp0.png)
 
 Se desarrolló un middleware que valida los tokens JWT en rutas protegidas, permitiendo restringir el acceso a funcionalidades sensibles.
+
+_Tokens JWT_
 
 ![grafico19](https://i.imgur.com/7joqGgt.png)
 
@@ -74,6 +79,8 @@ Se desarrolló un formulario de login, que al autenticarse correctamente guarda 
 Se agregó una tabla que lista todos los usuarios, con opciones para editar o eliminar desde la misma vista.
 
 Se integraron todas las operaciones CRUD en un solo módulo de gestión, optimizando la navegación y la usabilidad.
+
+_Operaciones CRUD_
 
 ![grafico19](https://i.imgur.com/uyHpzU2.png)
 
